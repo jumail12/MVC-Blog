@@ -7,12 +7,10 @@ namespace MVC_BlogWebApp.Models.BlogModel
         [Key]
         public Guid bId { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string? Title { get; set; }
         [Required]
-        public string Content { get; set; }
+        public string? Content { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string? Author { get; set; }
     }
-
-
 }

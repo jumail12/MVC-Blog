@@ -18,39 +18,30 @@
     }
     else
     {
-        <table class="table table-hover table-striped table-bordered align-middle">
-            <thead class="bg-primary text-white">
-                <tr>
-                    <th scope="col" class="text-center">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">View</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var blog in Model)
-                {
-                    <tr>
-                        <th scope="row" class="text-center">@counter</th>
-                        <td>@blog.Title</td>
-                        <td>@blog.Author</td>
-                        <td>
-                            <a asp-controller="Blog" asp-action="ViewById" asp-route-id="@blog.bId" class="btn btn-sm btn-outline-secondary">View Blog</a> <!-- Link to the edit functionality -->
-
-                        </td>
-                        <td>
-                            <a asp-controller="Blog" asp-action="DeleteBlog" asp-route-id="@blog.bId" class="btn btn-sm btn-outline-secondary">Delete Blog</a> <!-- Link to the edit functionality -->
-
-                        </td>
-
-                    </tr>
-                    counter++;
-                }
-            </tbody>
-        </table>
+        <div class="row g-4">
+            @foreach (var blog in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">#@counter: @blog.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">By @blog.Author</h6>
+                            <p class="card-text text-truncate">
+                                A preview of the blog's content can be added here if desired.
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Blog" asp-action="ViewById" asp-route-id="@blog.bId" class="btn btn-outline-primary btn-sm">
+                                    View Blog
+                                </a>
+                                <a asp-controller="Blog" asp-action="DeleteBlog" asp-route-id="@blog.bId" class="btn btn-outline-danger btn-sm">
+                                    Delete Blog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                counter++;
+            }
+        </div>
     }
 </div>
-
-
-

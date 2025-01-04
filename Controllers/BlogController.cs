@@ -106,7 +106,6 @@ namespace MVC_BlogWebApp.Controllers
             return NotFound(); // If the blog is not found
         }
 
-
         //DeleteBlog
         [HttpGet]
         public async Task<IActionResult> DeleteBlog(Guid id)

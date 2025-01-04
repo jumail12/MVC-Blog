@@ -166,3 +166,4 @@ D:\Mvc\MVC_BlogWebApp\MVC_BlogWebApp\obj\Debug\net8.0\refint\MVC_BlogWebApp.dll
 D:\Mvc\MVC_BlogWebApp\MVC_BlogWebApp\obj\Debug\net8.0\MVC_BlogWebApp.pdb
 D:\Mvc\MVC_BlogWebApp\MVC_BlogWebApp\obj\Debug\net8.0\MVC_BlogWebApp.genruntimeconfig.cache
 D:\Mvc\MVC_BlogWebApp\MVC_BlogWebApp\obj\Debug\net8.0\ref\MVC_BlogWebApp.dll
+D:\Mvc\MVC_BlogWebApp\MVC_BlogWebApp\obj\Debug\net8.0\MVC_BlogWebApp.sourcelink.json
