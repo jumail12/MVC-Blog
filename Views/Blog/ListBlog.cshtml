@@ -1,0 +1,56 @@
+﻿@* View for displaying a list of blogs *@
+@model List<MVC_BlogWebApp.Models.BlogModel.Blog>
+
+@{
+    ViewData["Title"] = "Blog List";
+    int counter = 1; // Counter variable for serial numbers
+}
+
+<div class="container mt-5 p-4 shadow-lg rounded bg-light">
+    <h1 class="text-center mb-4 text-primary">Blog List</h1>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            <i class="bi bi-exclamation-circle-fill text-warning"></i>
+            <strong>No blogs yet!</strong> Add some blogs to see them listed here.
+        </div>
+    }
+    else
+    {
+        <table class="table table-hover table-striped table-bordered align-middle">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col" class="text-center">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var blog in Model)
+                {
+                    <tr>
+                        <th scope="row" class="text-center">@counter</th>
+                        <td>@blog.Title</td>
+                        <td>@blog.Author</td>
+                        <td>
+                            <a asp-controller="Blog" asp-action="ViewById" asp-route-id="@blog.bId" class="btn btn-sm btn-outline-secondary">View Blog</a> <!-- Link to the edit functionality -->
+
+                        </td>
+                        <td>
+                            <a asp-controller="Blog" asp-action="DeleteBlog" asp-route-id="@blog.bId" class="btn btn-sm btn-outline-secondary">Delete Blog</a> <!-- Link to the edit functionality -->
+
+                        </td>
+
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+
+

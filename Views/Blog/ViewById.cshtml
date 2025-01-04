@@ -1,0 +1,36 @@
+﻿@model MVC_BlogWebApp.Models.BlogDto.BlogViewDto
+
+@{
+    ViewData["Title"] = "Blog Details";
+}
+
+<div class="container mt-5 p-4 shadow-lg rounded bg-light">
+    @if (Model == null)
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            <i class="bi bi-exclamation-circle-fill text-warning"></i>
+            <strong>Not Found!</strong>
+        </div>
+    }
+    else
+    {
+        <div class="blog-story">
+            <h1 class="text-center text-primary mb-4">@Model.Title</h1>
+            <h5 class="text-muted text-center mb-4">By @Model.Author</h5>
+            <p class="text-justify" style="line-height: 1.8; font-size: 1.2rem;">
+                @Model.Content
+            </p>
+        </div>
+
+        <!-- Button Section: Go Back on the left, Edit on the right -->
+        <div class="d-flex justify-content-between mt-4">
+            <a class="btn btn-secondary" asp-controller="Blog" asp-action="ListBlog">
+                <i class="bi bi-arrow-left"></i> Go Back
+            </a>
+
+            <a class="btn btn-warning" asp-controller="Blog" asp-action="EditBlog" asp-route-id="@Model.bId">
+                <i class="bi bi-pencil-fill"></i> Edit
+            </a>
+        </div>
+    }
+</div>
